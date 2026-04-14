@@ -117,7 +117,7 @@ Profissional de qualidade com foco em estratégia de testes, melhoria contínua 
 ## 📬 Contato
 
 - LinkedIn: www.linkedin.com/in/paesrenato  
-- GitHub: https://github.com/paesrenato/  
+- GitHub: https://github.com/paesrenato/qa-portfolio.git  
 - Email: paesrenato@gmail.com  
 
 ---
