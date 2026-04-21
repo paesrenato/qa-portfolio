@@ -1,0 +1,325 @@
+{
+  "info": {
+    "_postman_id": "18e823a4-4cfc-43b3-a56d-eabd6678ce4b",
+    "name": "Serverest-aula",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54024385",
+    "_collection_link": "https://go.postman.co/collection/54024385-18e823a4-4cfc-43b3-a56d-eabd6678ce4b?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "item": [
+        {
+          "name": "Login_user",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let response = pm.response.json();\r",
+                  "\r",
+                  "pm.collectionVariables.set(\"token\", response.authorization);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJlbmF0b0BxYS5jb20uYnIiLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzc2Mjk2ODMxLCJleHAiOjE3NzYyOTc0MzF9.rWGWGGJJHFD3Mf8Hey81HCWKKKSBz0Deli99FfvktMM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNTg5NzU4NzQ2LCJleHAiOjE1ODk3Njg3NDZ9.B6TASHV8k9xBerz4NSeFBlAZGSDhZlqESt767M0567I",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"ednaldo.santos@gmail.com.br\",\r\n  \"password\": \"123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/login",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Usuários",
+      "item": [
+        {
+          "name": "Criar usuário adm",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Renato da Silva\",\r\n  \"email\": \"renato@qa.com.br\",\r\n  \"password\": \"teste\",\r\n  \"administrador\": \"true\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/usuarios",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Produtos",
+      "item": [
+        {
+          "name": "Listar produtos",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response time is less than 500ms\", function () {\r",
+                  "    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Quantidade de produtos é 6\", function () {\r",
+                  "    pm.expect(pm.response.json().quantidade).to.equal(6);\r",
+                  "    });\r",
+                  "\r",
+                  "pm.test(\"Nome do primeiro produto é 'Logitech MX Vertical'\", function () {\r",
+                  "    pm.expect(pm.response.json().produtos[0].nome).to.equal(\"Logitech MX Vertical\");\r",
+                  "    });"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/produtos",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Listar produtos",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{BASE_URL}}/produtos",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "produtos"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            }
+          ]
+        },
+        {
+          "name": "Cadastrar Produtos",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "    });\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVkbmFsZG8uc2FudG9zQGdtYWlsLmNvbS5iciIsInBhc3N3b3JkIjoiMTIzIiwiaWF0IjoxNzc2NzI5MzQ1LCJleHAiOjE3NzY3Mjk5NDV9.ztXv7Hcr8VyfdOJFrZCF94nmXSu6rqbFAbbX9uZm5yk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Iphone 16ProMax\",\r\n  \"preco\": 7000,\r\n  \"descricao\": \"Smartphone\",\r\n  \"quantidade\": 20\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/produtos",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar Produtos",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 401\", function () {\r",
+                  "    pm.response.to.have.status(401);\r",
+                  "    });\r",
+                  "    pm.collectionVariables.set(\"message\", pm.response.json().message);\r",
+                  "    pm.test(\"Response message is 'Token de acesso ausente, inválido, expirado'\", function () {\r",
+                  "        pm.expect(pm.collectionVariables.get(\"message\")).to.eql(\"Token de acesso ausente, inválido, expirado\");\r",
+                  "        });"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVkbmFsZG8uc2FudG9zQGdtYWlsLmNvbS5iciIsInBhc3N3b3JkIjoiMTIzIiwiaWF0IjoxNzc2NzI5MzQ1LCJleHAiOjE3NzY3Mjk5NDV9.ztXv7Hcr8VyfdOJFrZCF94nmXSu6rqbFAbbX9uZm5yk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVkbmFsZG8uc2FudG9zQGdtYWlsLmNvbS5iciIsInBhc3N3b3JkIjoiMTIzIiwiaWF0IjoxNzc2NzI5MzQ1LCJleHAiOjE3NzY3Mjk5NDV9.ztXv7Hcr8VyfdOJFrZCF94nmXSu6rqbFAbbX9uZm5yk",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/produtos/Df2iYAWLNcoL3n5O",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "produtos",
+                "Df2iYAWLNcoL3n5O"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "message",
+      "value": ""
+    }
+  ]
+}
