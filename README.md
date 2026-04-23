@@ -11,6 +11,9 @@ Este repositório reúne artefatos práticos de testes de software, simulando ce
 - 🔍 Testes exploratórios  
 - 🐞 Bug reports profissionais  
 - 📊 Pensamento crítico aplicado à qualidade  
+- 🔌 Testes de API  
+- 🧪 Collections Postman  
+- 🗄️ Validação de dados em banco  
 
 ---
 
@@ -22,14 +25,15 @@ qa-portfolio/
 │ └── CT-Parabank-login.md
 ├── exploratorio/ ← artefatos de teste exploratório
 │ └── sessao-kabum-cadastro.md
-└── bug-reports/ ← bug reports profissionais
-└── BUG-001-kabum-telefone-invalido.md
+├── bug-reports/ ← bug reports profissionais
+│ └── BUG-001-kabum-telefone-invalido.md
+├── api/ ← documentação e testes de API
+├── postman/ ← collections e testes automatizados
+└── database/ ← cenários e validações de dados
 
 ---
 
-## 🧾 Conteúdo
-
-### 🧾 Cases
+## 🧾 Cases
 
 Casos de teste estruturados com abordagem profissional, contendo:
 
@@ -47,7 +51,7 @@ Casos de teste estruturados com abordagem profissional, contendo:
 
 ---
 
-### 🔍 Teste Exploratório
+## 🔍 Teste Exploratório
 
 Sessões documentadas de testes exploratórios utilizando técnicas como:
 
@@ -64,7 +68,7 @@ Sessões documentadas de testes exploratórios utilizando técnicas como:
 
 ---
 
-### 🐞 Bug Reports
+## 🐞 Bug Reports
 
 Bug reports estruturados seguindo padrões profissionais de mercado:
 
@@ -77,49 +81,128 @@ Bug reports estruturados seguindo padrões profissionais de mercado:
 📁 **Local:** `bug-reports/`  
 
 **Exemplo:**  
-- `BUG-001-kabum-cadastro.md`
+- `BUG-001-kabum-telefone-invalido.md`
 
 ---
 
-## 🎯 Objetivo do Portfólio
+## 🔌 Testes de API
+
+Documentação e validação de endpoints REST, simulando cenários reais de consumo de serviços.
+
+### 📍 O que é coberto
+
+- Endpoints (GET, POST, PUT, DELETE)  
+- Parâmetros e payloads  
+- Autenticação  
+- Códigos de resposta  
+- Validação de regras de negócio  
+
+### 📄 Estrutura da documentação
+
+Cada endpoint documentado contém:
+
+- Descrição  
+- URL  
+- Método HTTP  
+- Headers  
+- Body (request)  
+- Response esperado  
+- Casos de sucesso e erro  
+
+📁 **Local:** `api/`
+
+---
+
+## 🧪 Postman
+
+Utilização do Postman para execução e automação de testes de API.
+
+### 📁 Collections
+
+Collections organizadas por domínio funcional, contendo:
+
+- Fluxos completos de teste  
+- Requisições encadeadas  
+- Variáveis de ambiente  
+
+📁 **Local:** `postman/`
+
+---
+
+### ✅ Assertions (Testes Automatizados)
+
+Exemplo de validações implementadas:
+
+```javascript
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response contains expected data", function () {
+    const jsonData = pm.response.json();
+    pm.expect(jsonData).to.have.property("id");
+});
+
+});
+
+🔄 Variáveis utilizadas
+
+base_url
+
+token
+
+user_id
+
+🗄️ Database
+
+Validação de dados diretamente no banco, garantindo consistência entre backend e persistência.
+
+📌 O que é testado
+
+Integridade de dados
+
+Persistência correta
+
+Regras de negócio no banco
+
+Impacto de operações CRUD
+
+📁 Local: database/
+
+🎯 Objetivo do Portfólio
 
 Este portfólio tem como objetivo demonstrar:
 
-- Pensamento analítico  
-- Capacidade investigativa  
-- Escrita técnica clara  
-- Mentalidade de qualidade  
-- Experiência prática em testes  
+Pensamento analítico
 
----
+Capacidade investigativa
 
-## 🛠️ Habilidades Demonstradas
+Escrita técnica clara
 
-- Testes Manuais  
-- Testes Exploratórios  
-- Escrita de Casos de Teste  
-- Bug Reporting  
-- Análise de Requisitos  
-- Test Design  
-- Heurísticas de Teste  
+Mentalidade de qualidade
 
----
+Experiência prática em testes
 
-## 👩‍💻 Sobre Mim
+🛠️ Habilidades Demonstradas
 
-**Renato Paes**  
-QA Manual | Analista de Qualidade | QA Analyst  
+Categoria	Habilidades
+Testes Manuais	Testes Exploratórios, Escrita de Casos de Teste, Bug Reporting
+Análise	Análise de Requisitos, Test Design, Heurísticas de Teste
+APIs	Testes de API, Automação com Postman
+Banco de Dados	Validação de Banco de Dados, SQL
+
+👩‍💻 Sobre Mim
+
+Renato Paes
+QA Manual | Analista de Qualidade | QA Analyst
 
 Profissional de qualidade com foco em estratégia de testes, melhoria contínua e entrega de software com alto nível de confiabilidade.
 
----
+📬 Contato
+LinkedIn: www.linkedin.com/in/paesrenato
 
-## 📬 Contato
+GitHub: https://github.com/paesrenato/qa-portfolio.git
 
-- LinkedIn: www.linkedin.com/in/paesrenato  
-- GitHub: https://github.com/paesrenato/qa-portfolio.git  
-- Email: paesrenato@gmail.com  
-
----
+Email: paesrenato@gmail.com
 
 ⭐ Este repositório está em constante evolução conforme novos artefatos são adicionados.
