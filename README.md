@@ -20,20 +20,22 @@ Este repositório reúne artefatos práticos de testes de software, simulando ce
 ## 📂 Estrutura do Repositório
 
 qa-portfolio/
-├── README.md ← descrição do portfólio
-├── cases/ ← casos de teste formais
-│ └── CT-Parabank-login.md
-├── exploratorio/ ← artefatos de teste exploratório
-│ └── sessao-kabum-cadastro.md
-├── bug-reports/ ← bug reports profissionais
-│ └── BUG-001-kabum-telefone-invalido.md
-├── api/ ← documentação e testes de API
-├── postman/ ← collections e testes automatizados
-└── database/ ← cenários e validações de dados
+├── README.md ← descrição do portfólio  
+├── cases/ ← casos de teste formais  
+│ └── CT-Parabank-login.md  
+├── exploratorio/ ← artefatos de teste exploratório  
+│ └── sessao-kabum-cadastro.md  
+├── bug-reports/ ← bug reports profissionais  
+│ └── BUG-001-kabum-telefone-invalido.md  
+├── api/ ← documentação e testes de API  
+├── postman/ ← collections e testes automatizados  
+└── database/ ← cenários e validações de dados  
 
 ---
 
-## 🧾 Cases
+## 🧾 Conteúdo
+
+### 🧾 Cases
 
 Casos de teste estruturados com abordagem profissional, contendo:
 
@@ -51,7 +53,7 @@ Casos de teste estruturados com abordagem profissional, contendo:
 
 ---
 
-## 🔍 Teste Exploratório
+### 🔍 Teste Exploratório
 
 Sessões documentadas de testes exploratórios utilizando técnicas como:
 
@@ -68,7 +70,7 @@ Sessões documentadas de testes exploratórios utilizando técnicas como:
 
 ---
 
-## 🐞 Bug Reports
+### 🐞 Bug Reports
 
 Bug reports estruturados seguindo padrões profissionais de mercado:
 
@@ -81,7 +83,7 @@ Bug reports estruturados seguindo padrões profissionais de mercado:
 📁 **Local:** `bug-reports/`  
 
 **Exemplo:**  
-- `BUG-001-kabum-telefone-invalido.md`
+- `BUG-001-kabum-cadastro.md`
 
 ---
 
@@ -142,67 +144,75 @@ pm.test("Response contains expected data", function () {
     const jsonData = pm.response.json();
     pm.expect(jsonData).to.have.property("id");
 });
+```
 
-});
+### 🔄 Variáveis utilizadas
 
-🔄 Variáveis utilizadas
+- `base_url`  
+- `token`  
+- `user_id`  
 
-base_url
+---
 
-token
-
-user_id
-
-🗄️ Database
+## 🗄️ Database
 
 Validação de dados diretamente no banco, garantindo consistência entre backend e persistência.
 
-📌 O que é testado
+### 📌 O que é testado
 
-Integridade de dados
+- Integridade de dados  
+- Persistência correta  
+- Regras de negócio no banco  
+- Impacto de operações CRUD  
 
-Persistência correta
+---
 
-Regras de negócio no banco
+📁 **Local:** `database/`
 
-Impacto de operações CRUD
+---
 
-📁 Local: database/
-
-🎯 Objetivo do Portfólio
+## 🎯 Objetivo do Portfólio
 
 Este portfólio tem como objetivo demonstrar:
 
-Pensamento analítico
+- Pensamento analítico  
+- Capacidade investigativa  
+- Escrita técnica clara  
+- Mentalidade de qualidade  
+- Experiência prática em testes  
 
-Capacidade investigativa
+---
 
-Escrita técnica clara
+## 🛠️ Habilidades Demonstradas
 
-Mentalidade de qualidade
+- Testes Manuais  
+- Testes Exploratórios  
+- Escrita de Casos de Teste  
+- Bug Reporting  
+- Análise de Requisitos  
+- Test Design  
+- Heurísticas de Teste  
+- Testes de API  
+- Automação com Postman  
+- Validação de Banco de Dados  
 
-Experiência prática em testes
+---
 
-🛠️ Habilidades Demonstradas
+## 👩‍💻 Sobre Mim
 
-Categoria	Habilidades
-Testes Manuais	Testes Exploratórios, Escrita de Casos de Teste, Bug Reporting
-Análise	Análise de Requisitos, Test Design, Heurísticas de Teste
-APIs	Testes de API, Automação com Postman
-Banco de Dados	Validação de Banco de Dados, SQL
-
-👩‍💻 Sobre Mim
-
-Renato Paes
-QA Manual | Analista de Qualidade | QA Analyst
+**Renato Paes**  
+QA Manual | Analista de Qualidade | QA Analyst  
 
 Profissional de qualidade com foco em estratégia de testes, melhoria contínua e entrega de software com alto nível de confiabilidade.
 
-📬 Contato
-LinkedIn: www.linkedin.com/in/paesrenato
+---
 
-GitHub: https://github.com/paesrenato/qa-portfolio.git
+## 📬 Contato
 
-Email: paesrenato@gmail.com
+- LinkedIn: www.linkedin.com/in/paesrenato  
+- GitHub: https://github.com/paesrenato/qa-portfolio.git  
+- Email: paesrenato@gmail.com  
+
+---
 
 ⭐ Este repositório está em constante evolução conforme novos artefatos são adicionados.
